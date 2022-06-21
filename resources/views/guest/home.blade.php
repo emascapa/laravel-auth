@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 {{-- per il contenuto della home lato guest 
     mi servirò di Vuejs --}}
