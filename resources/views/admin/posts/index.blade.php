@@ -29,7 +29,11 @@
                         <td>{{ $post->content }}</td>
                         <td><img width="50px" src="{{ $post->image }}" alt="{{ $post->slug }}"></td>
                         <td>{{ date('d-m-Y', strtotime($post->date)) }}</td>
-                        <td>Azioni QUI</td>
+                        <td>
+                            <a href="{{route('admin.posts.show', $post->id)}}">View</a>
+                            <a href="{{route('admin.posts.edit', $post->id)}}">Edit</a>
+                            <a href="#">Delete</a>
+                        </td>
                     </tr>
 
                 @empty

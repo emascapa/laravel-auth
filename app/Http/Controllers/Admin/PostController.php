@@ -85,6 +85,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -94,9 +95,20 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
         //
+        $data = $request->validated();
+        
+        //$data = $request->all();
+        
+        //dd($data);
+
+        $data['slug'] = Str::slug($request->title, '-');
+
+        $post->update($data);
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**
