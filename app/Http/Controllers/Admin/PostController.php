@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\PostRequest;
+
+use Illuminate\Support\Str;
+
 class PostController extends Controller
 {
     /**
@@ -38,9 +42,25 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //
+        
+        $data = $request->validated();
+        
+        
+        
+        //$data = $request->all();
+        
+        //dd($data);
+
+        $data['slug'] = Str::slug($request->title, '-');
+
+        Post::create($data);
+
+
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**

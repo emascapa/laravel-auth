@@ -14,7 +14,7 @@
         @endif
 
 
-        <form action="" method="post"> {{-- {{route('comics.store')}} --}}
+        <form action="{{route('admin.posts.store')}}" method="post"> {{-- {{route('posts.store')}} --}}
 
             <h2 class="text-center">Create a new Post</h2>
 
