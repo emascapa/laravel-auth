@@ -9,7 +9,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 //devo importare il componente
-//import App from './views/App';
+import App from './views/App';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -20,4 +20,6 @@ window.Vue = require('vue');
 const app = new Vue({
     el: '#root',
 
+    //important
+    render: h => h(App)
 });

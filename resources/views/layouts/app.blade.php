@@ -88,7 +88,7 @@
         </div>
     </nav>
 
-    @yield('root')
+    @yield('content')
 
 </body>
 </html>
