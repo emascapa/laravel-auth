@@ -28,7 +28,7 @@
                         <td>{{ $post->slug }}</td>
                         <td>{{ $post->content }}</td>
                         <td><img width="50px" src="{{ $post->image }}" alt="{{ $post->slug }}"></td>
-                        <td>{{ $newDate = date('d-m-Y', strtotime($post->date)) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($post->date)) }}</td>
                         <td>Azioni QUI</td>
                     </tr>
 
