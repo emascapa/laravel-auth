@@ -84,6 +84,7 @@
             <nav class="nav justify-content-center bg-dark text-white py-2">
               <a class="nav-link" href="{{ route('admin.index') }}">Admin Home</a>
               <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
+              <a class="nav-link" href="{{ route('admin.posts.create') }}">Create Post</a>
               <a class="nav-link disabled" href="#">Disabled link</a>
             </nav>
         </header>
